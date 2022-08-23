@@ -18,8 +18,8 @@ public class ComicStatus {
 	private String statusName;
 	@Column(name = "status_description")
 	private String statusDescription;
-	
+
 	@OneToMany(mappedBy = "comicStatus")
 	private Set<Comic> comic;
-	
+
 }

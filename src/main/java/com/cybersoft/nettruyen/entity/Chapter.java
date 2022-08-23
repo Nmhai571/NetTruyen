@@ -19,10 +19,10 @@ public class Chapter {
 	private String chapterDescription;
 	@Column(name = "source_comic")
 	private String sourceComic;
-	
-	//private long idComic; fk
+
+	// private long idComic; fk
 	@ManyToOne()
 	@JoinColumn(name = "idComic")
 	Comic comic;
-	
+
 }

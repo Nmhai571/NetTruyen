@@ -16,7 +16,7 @@ public class Author {
 	private int id;
 	@Column(name = "author_name")
 	private String authorName;
-	
+
 	@OneToMany(mappedBy = "author")
 	private Set<Comic> comic;
 }

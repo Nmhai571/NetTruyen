@@ -16,9 +16,9 @@ public class ComicCategoryDetail {
 	@ManyToOne()
 	@JoinColumn(name = "idComic")
 	Comic comic;
-	
+
 //	private int idCategory;
-	
+
 	@ManyToOne()
 	@JoinColumn(name = "idCategory")
 	ComicCategory comicCategory;

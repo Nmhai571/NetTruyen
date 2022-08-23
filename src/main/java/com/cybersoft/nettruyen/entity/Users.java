@@ -16,22 +16,27 @@ public class Users {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
+
 	@Column(name = "fullname")
 	private String fullName;
+
 	@Column(name = "email")
 	private String email;
+
 	@Column(name = "pass")
 	private String password;
+
 	@Column(name = "gender")
 	private String gender;
+
 	@Column(name = "avatar")
 	private String avatar;
-	
+
 	// private int roleId; // FK
 	@ManyToOne()
 	@JoinColumn(name = "roleId")
 	Roles roles;
-	
+
 	@OneToMany(mappedBy = "users")
 	private Set<ComicUserDetail> comicUserDetails;
 
@@ -90,5 +95,5 @@ public class Users {
 	public void setRoles(Roles roles) {
 		this.roles = roles;
 	}
-	
+
 }

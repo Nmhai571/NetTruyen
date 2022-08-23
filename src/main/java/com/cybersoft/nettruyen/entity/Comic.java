@@ -26,24 +26,23 @@ public class Comic {
 	private String content;
 	@Column(name = "thumbnail")
 	private String thumbnail;
-	
+
 //	private int idAuthor; //fk
 	@ManyToOne()
 	@JoinColumn(name = "idAuthor")
 	Author author;
-	
-	
+
 //	private int idComicStatus; // fk
 	@ManyToOne()
 	@JoinColumn(name = "idComicStatus")
 	ComicStatus comicStatus;
-	
+
 	@OneToMany(mappedBy = "comic")
 	private Set<Chapter> chapter;
-	
+
 	@OneToMany(mappedBy = "comic")
 	private Set<ComicUserDetail> comicUserDetails;
-	
+
 	@OneToMany(mappedBy = "comic")
 	private Set<ComicCategoryDetail> comicCategoryDetails;
 }
