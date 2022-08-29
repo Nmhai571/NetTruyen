@@ -21,6 +21,6 @@ public class Status {
 	@Column(name = "status_description")
 	private String statusDescription;
 
-	@OneToMany(mappedBy = "comicStatus")
+	@OneToMany(mappedBy = "status")
 	private Set<Comic> comic;
 }
