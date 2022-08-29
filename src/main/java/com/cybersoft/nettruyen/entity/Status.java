@@ -23,4 +23,38 @@ public class Status {
 
 	@OneToMany(mappedBy = "status")
 	private Set<Comic> comic;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getStatusName() {
+		return statusName;
+	}
+
+	public void setStatusName(String statusName) {
+		this.statusName = statusName;
+	}
+
+	public String getStatusDescription() {
+		return statusDescription;
+	}
+
+	public void setStatusDescription(String statusDescription) {
+		this.statusDescription = statusDescription;
+	}
+
+	public Set<Comic> getComic() {
+		return comic;
+	}
+
+	public void setComic(Set<Comic> comic) {
+		this.comic = comic;
+	}
+	
+	
 }

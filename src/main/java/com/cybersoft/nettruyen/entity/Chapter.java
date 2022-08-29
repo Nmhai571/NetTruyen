@@ -27,4 +27,46 @@ public class Chapter {
 	@ManyToOne()
 	@JoinColumn(name = "idComic")
 	Comic comic;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getChapterName() {
+		return chapterName;
+	}
+
+	public void setChapterName(String chapterName) {
+		this.chapterName = chapterName;
+	}
+
+	public String getChapterDescription() {
+		return chapterDescription;
+	}
+
+	public void setChapterDescription(String chapterDescription) {
+		this.chapterDescription = chapterDescription;
+	}
+
+	public String getSourceComic() {
+		return sourceComic;
+	}
+
+	public void setSourceComic(String sourceComic) {
+		this.sourceComic = sourceComic;
+	}
+
+	public Comic getComic() {
+		return comic;
+	}
+
+	public void setComic(Comic comic) {
+		this.comic = comic;
+	}
+	
+	
 }

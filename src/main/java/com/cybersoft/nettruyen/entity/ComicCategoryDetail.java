@@ -23,4 +23,30 @@ public class ComicCategoryDetail {
 	@ManyToOne
 	@JoinColumn(name = "idCategory")
 	Category comicCategory;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public Comic getComic() {
+		return comic;
+	}
+
+	public void setComic(Comic comic) {
+		this.comic = comic;
+	}
+
+	public Category getComicCategory() {
+		return comicCategory;
+	}
+
+	public void setComicCategory(Category comicCategory) {
+		this.comicCategory = comicCategory;
+	}
+	
+	
 }
