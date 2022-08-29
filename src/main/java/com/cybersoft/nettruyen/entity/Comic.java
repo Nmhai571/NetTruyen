@@ -16,14 +16,19 @@ public class Comic {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
+
 	@Column(name = "comic_name")
-	private String comicName;
+	private String name;
+
 	@Column(name = "views")
 	private long views;
+
 	@Column(name = "description_comic")
-	private String comicDescription;
+	private String description;
+
 	@Column(name = "content")
 	private String content;
+
 	@Column(name = "thumbnail")
 	private String thumbnail;
 
@@ -35,7 +40,7 @@ public class Comic {
 //	private int idComicStatus; // fk
 	@ManyToOne()
 	@JoinColumn(name = "idComicStatus")
-	ComicStatus comicStatus;
+	Status status;
 
 	@OneToMany(mappedBy = "comic")
 	private Set<Chapter> chapter;

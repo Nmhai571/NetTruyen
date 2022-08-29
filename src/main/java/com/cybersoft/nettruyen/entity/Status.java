@@ -10,16 +10,17 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @Entity(name = "comic_status")
-public class ComicStatus {
+public class Status {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
+
 	@Column(name = "status_name")
 	private String statusName;
+
 	@Column(name = "status_description")
 	private String statusDescription;
 
 	@OneToMany(mappedBy = "comicStatus")
 	private Set<Comic> comic;
-
 }

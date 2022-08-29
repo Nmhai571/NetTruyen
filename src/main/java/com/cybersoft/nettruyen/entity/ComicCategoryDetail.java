@@ -13,13 +13,14 @@ public class ComicCategoryDetail {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	@ManyToOne()
+
+	@ManyToOne
 	@JoinColumn(name = "idComic")
 	Comic comic;
 
 //	private int idCategory;
 
-	@ManyToOne()
+	@ManyToOne
 	@JoinColumn(name = "idCategory")
-	ComicCategory comicCategory;
+	Category comicCategory;
 }

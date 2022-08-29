@@ -10,15 +10,17 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @Entity(name = "comic_category")
-public class ComicCategory {
+public class Category {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
+
 	@Column(name = "category_name")
-	private String categoryName;
+	private String name;
+
 	@Column(name = "category_description")
-	private String categoryDescriptiom;
-	
+	private String descriptiom;
+
 	@OneToMany(mappedBy = "comicCategory")
 	private Set<ComicCategoryDetail> comicCategoryDetails;
 }

@@ -12,15 +12,16 @@ public class ComicUserDetail {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
+
 	// private long idUser;
-	@ManyToOne()
+	@ManyToOne
 	@JoinColumn(name = "idUser")
 	Users users;
 
 //	@Column(name = "id_comic")
 //	private long idComic;
 
-	@ManyToOne()
+	@ManyToOne
 	@JoinColumn(name = "id_comic")
 	Comic comic;
 }

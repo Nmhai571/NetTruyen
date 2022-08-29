@@ -13,10 +13,13 @@ public class Chapter {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
+
 	@Column(name = "chapter_name")
 	private String chapterName;
+
 	@Column(name = "chapter_description")
 	private String chapterDescription;
+
 	@Column(name = "source_comic")
 	private String sourceComic;
 
@@ -24,5 +27,4 @@ public class Chapter {
 	@ManyToOne()
 	@JoinColumn(name = "idComic")
 	Comic comic;
-
 }
