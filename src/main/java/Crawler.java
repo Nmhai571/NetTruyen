@@ -14,7 +14,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 public class Crawler {
 	
-	private static String URL = "http://truyenqqpro.com/truyen-tranh/diep-vien-18-tuoi-12869";
+	private static String URL = "http://truyenqqpro.com/truyen-tranh/ke-phan-dien-thuan-tuy-12859";
 	private static String NAME_COMIC = URL.substring(URL.indexOf("truyen-tranh") + 13, URL.length());
 	static Scanner scan = new Scanner(System.in);
 	
@@ -37,12 +37,12 @@ public class Crawler {
 		driver.get(URL);
 		WebElement element = driver.findElement(By.cssSelector("img[itemprop=\"image\"]"));
 		String thumbnail = element.getAttribute("src");
-		File theDir = new File("D:\\ComicProject\\" + NAME_COMIC);
+		File theDir = new File("ComicProject\\" + NAME_COMIC);
 		if (!theDir.exists()){
 		    theDir.mkdirs();
 		}
 		try {
-			FileWriter fw = new FileWriter("D:\\ComicProject\\" + NAME_COMIC + "\\" + "thumbnail" + ".txt", true);
+			FileWriter fw = new FileWriter("ComicProject\\" + NAME_COMIC + "\\" + "thumbnail" + ".txt", true);
 			BufferedWriter buffer = new BufferedWriter(fw);
 			buffer.write(thumbnail);
 			buffer.close();
@@ -64,12 +64,12 @@ public class Crawler {
 	}
 	
 	public static void fileWriteUrl(String url, String numChap) {
-		File theDir = new File("D:\\ComicProject\\" + NAME_COMIC);
+		File theDir = new File("ComicProject\\" + NAME_COMIC);
 		if (!theDir.exists()){
 		    theDir.mkdirs();
 		}
 		try {
-			FileWriter fw = new FileWriter("D:\\ComicProject\\" + NAME_COMIC + "\\" + NAME_COMIC + "_Chap" + numChap + ".txt", true);
+			FileWriter fw = new FileWriter("ComicProject\\" + NAME_COMIC + "\\" + NAME_COMIC + "_Chap" + numChap + ".txt", true);
 			BufferedWriter buffer = new BufferedWriter(fw);
 			buffer.write(url);
 			buffer.newLine();
