@@ -34,12 +34,12 @@ public class Comic {
 
 //	private int idAuthor; //fk
 	@ManyToOne()
-	@JoinColumn(name = "idAuthor")
+	@JoinColumn(name = "id_author")
 	Author author;
 
 //	private int idComicStatus; // fk
 	@ManyToOne()
-	@JoinColumn(name = "idComicStatus")
+	@JoinColumn(name = "id_comic_status")
 	Status status;
 
 	@OneToMany(mappedBy = "comic")

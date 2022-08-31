@@ -13,7 +13,7 @@ import javax.persistence.OneToMany;
 public class Roles {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private long id;
 
 	@Column(name = "role_name")
 	private String roleName;
@@ -24,11 +24,11 @@ public class Roles {
 	@OneToMany(mappedBy = "roles")
 	private Set<Users> users;
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 

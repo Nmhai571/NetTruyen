@@ -11,11 +11,11 @@ import javax.persistence.ManyToOne;
 public class ComicUserDetail {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private long id;
 
 	// private long idUser;
 	@ManyToOne
-	@JoinColumn(name = "idUser")
+	@JoinColumn(name = "id_user")
 	Users users;
 
 //	@Column(name = "id_comic")
@@ -25,11 +25,11 @@ public class ComicUserDetail {
 	@JoinColumn(name = "id_comic")
 	Comic comic;
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 

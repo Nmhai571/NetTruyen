@@ -12,23 +12,23 @@ public class ComicCategoryDetail {
 //	private long idComic;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private long id;
 
 	@ManyToOne
-	@JoinColumn(name = "idComic")
+	@JoinColumn(name = "id_comic")
 	Comic comic;
 
 //	private int idCategory;
 
 	@ManyToOne
-	@JoinColumn(name = "idCategory")
+	@JoinColumn(name = "id_category")
 	Category comicCategory;
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 

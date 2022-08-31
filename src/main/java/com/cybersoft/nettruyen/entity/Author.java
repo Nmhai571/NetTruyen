@@ -13,7 +13,7 @@ import javax.persistence.OneToMany;
 public class Author {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private long id;
 
 	@Column(name = "author_name")
 	private String name;
@@ -21,11 +21,11 @@ public class Author {
 	@OneToMany(mappedBy = "author")
 	private Set<Comic> comic;
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 

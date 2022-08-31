@@ -12,10 +12,13 @@ import javax.persistence.ManyToOne;
 public class Chapter {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private long id;
 
 	@Column(name = "chapter_name")
 	private String chapterName;
+	
+	@Column(name = "day_upload")
+	private String dayUpload;
 
 	@Column(name = "chapter_description")
 	private String chapterDescription;
@@ -25,14 +28,24 @@ public class Chapter {
 
 	// private long idComic; fk
 	@ManyToOne()
-	@JoinColumn(name = "idComic")
+	@JoinColumn(name = "id_comic")
 	Comic comic;
 
-	public int getId() {
+	
+	
+	public String getDayUpload() {
+		return dayUpload;
+	}
+
+	public void setDayUpload(String dayUpload) {
+		this.dayUpload = dayUpload;
+	}
+
+	public long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 

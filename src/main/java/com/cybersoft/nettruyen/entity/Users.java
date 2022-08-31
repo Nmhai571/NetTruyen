@@ -34,7 +34,7 @@ public class Users {
 
 	// private int roleId; // FK
 	@ManyToOne()
-	@JoinColumn(name = "roleId")
+	@JoinColumn(name = "id_role")
 	Roles roles;
 
 	@OneToMany(mappedBy = "users")
