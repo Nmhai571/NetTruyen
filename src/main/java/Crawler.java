@@ -14,18 +14,26 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 public class Crawler {
 	
-	private static String URL = "http://truyenqqpro.com/truyen-tranh/ke-phan-dien-thuan-tuy-12859";
-	private static String NAME_COMIC = URL.substring(URL.indexOf("truyen-tranh") + 13, URL.length());
+	/*
+	 * Đổi trang thì phải sửa lại NAME_COMIC, numChap trong class Chap, Thumbmail, getChap, getImage.
+	 * Đổi truyện thì sửa URL
+	 * */
+	
+	
+	
+	private static String URL = "http://www.truyentranhtop.com/cau-moi-la-nguoi-de-thuong-nhat";
+	private static String NAME_COMIC = URL.substring(URL.indexOf("top.com") + 8, URL.length());
 	static Scanner scan = new Scanner(System.in);
 	
 	public static List<Chap> getAllChap(String url, ChromeOptions options) {
 		List<Chap> chaps = new ArrayList<Chap>();
 		WebDriver driver = new ChromeDriver(options);
 		driver.get(url);
-		List<WebElement> elements = driver.findElements(By.cssSelector("a[target=\"_self\"]"));
+		List<WebElement> elements = driver.findElements(By.className("list-group-item"));
 		for (WebElement e : elements) {
 			String urlChap = e.getAttribute("href");
 			Chap chap = new Chap(urlChap);
+			System.out.println(urlChap);
 			chaps.add(chap);
 		}
 		driver.close();
@@ -35,7 +43,7 @@ public class Crawler {
 	public static void fileWriteThumbnail(ChromeOptions options) {
 		WebDriver driver = new ChromeDriver(options);
 		driver.get(URL);
-		WebElement element = driver.findElement(By.cssSelector("img[itemprop=\"image\"]"));
+		WebElement element = driver.findElement(By.className("rounded"));
 		String thumbnail = element.getAttribute("src");
 		File theDir = new File("ComicProject\\" + NAME_COMIC);
 		if (!theDir.exists()){
@@ -55,10 +63,16 @@ public class Crawler {
 	public static void getAllImage(String url, String numChap, ChromeOptions options) {
 		WebDriver driver = new ChromeDriver(options);
 		driver.get(url);
-		List<WebElement> elements = driver.findElements(By.className("lazy"));
-		for (WebElement e : elements) {
+		System.out.println(url);
+		List<WebElement> elements_1 = driver.findElements(By.cssSelector("img[style=\"min-height:200px;\"]"));
+		List<WebElement> elements_2 = driver.findElements(By.className("chaplazy"));
+		System.out.println(elements_1.size() + elements_2.size());
+		for (WebElement e : elements_1) {
 			String urlImage = e.getAttribute("src");
 			fileWriteUrl(urlImage, numChap);
+		}
+		for (WebElement e : elements_2) {
+			String urlImage = e.getAttribute("src");
 		}
 		driver.close();
 	}

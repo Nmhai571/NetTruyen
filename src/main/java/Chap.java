@@ -18,8 +18,8 @@ public class Chap {
 	}
 
 	private String chapNumber(String url){
-        int idx = url.indexOf("chap");
-        String numChap = url.substring(idx + 5, url.length() - 5);
+        int idx = url.indexOf("chap-");
+        String numChap = url.substring(idx + 5, url.length());
         return numChap;
     }
 }
